@@ -1,0 +1,61 @@
+\documentclass{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{multimedia}
+
+\mode<presentation>						% Set options
+{
+  \usetheme{Warsaw}					% Set theme
+  \usecolortheme{default} 				% Set colors
+  \usefonttheme{default}  				% Set font theme
+  \setbeamertemplate{caption}[numbered]	% Set caption to be numbered
+  \setbeamertemplate{footline}[frame number]
+}
+
+\AtBeginSection{\frame[plain]{\tableofcontents[currentsection]}}
+
+\title{Développement évolutionnaire de systèmes de systèmes avec une approche par patron de reconfiguration dynamique}
+\author{PETITDEMANGE Franck}
+\institute{\includegraphics[scale=0.15]{logo_irisa.jpg}}
+\date{le 3 décembre 2018}
+
+\begin{document}
+\begin{frame}[plain]
+\titlepage
+\begin{center}
+Directrice : BORNE Isabelle\\
+Co-directeur : BUISSON Jérémy  
+\end{center}
+
+\end{frame}
+
+\input{Contexte/contexte.tex}
+\input{Contribution1/contribution1.tex}
+\input{Contribution2/contribution2.tex}
+\input{Contribution3/contribution3.tex}
+\input{Contribution4/contribution4.tex}
+\input{Conclusion/conclusion.tex}
+
+\begin{frame}[plain]
+\begin{thebibliography}{}
+\bibitem{}
+Franck Petitdemange, Isabelle Borne, Jérémy Buisson :
+\newblock {\em Modeling System of Systems configurations. SoSE 2018: 392-399}
+
+\bibitem{}
+Franck Petitdemange, Jérémy Buisson, Isabelle Borne :
+\newblock{\em Une approche orientée patron pour la reconfiguration de système de systèmes. Technique et Science Informatiques 35(6): 665-674 (2016)}
+
+\bibitem{}
+Franck Petitdemange, Isabelle Borne, Jérémy Buisson :
+\newblock{\em Assisting the evolutionary development of SoS with reconfiguration patterns. ECSA Workshops 2016: 9}
+
+\bibitem{}
+Franck Petitdemange, Isabelle Borne, Jérémy Buisson :
+\newblock{ \em Approach Based Patterns for System-of-Systems Reconfiguration. SESoS@ICSE 2015: 19-22}
+\end{thebibliography}
+\end{frame}
+
+\end{document}
