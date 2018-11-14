@@ -7,14 +7,19 @@
 
 \mode<presentation>						% Set options
 {
-  \usetheme{Warsaw}					% Set theme
-  \usecolortheme{default} 				% Set colors
-  \usefonttheme{default}  				% Set font theme
+  \usetheme{Madrid}					% Set theme
+  %\usecolortheme{default} 				% Set colors
+  %\usefonttheme{default}  				% Set font theme
   \setbeamertemplate{caption}[numbered]	% Set caption to be numbered
   \setbeamertemplate{footline}[frame number]
+
 }
 
-\AtBeginSection{\frame[plain]{\tableofcontents[currentsection]}}
+\AtBeginSection{
+\begin{frame}[plain]{Plan de la soutenance}
+\tableofcontents[currentsection]
+\end{frame}
+}
 
 \title{Développement évolutionnaire de systèmes de systèmes avec une approche par patron de reconfiguration dynamique}
 \author{PETITDEMANGE Franck}
@@ -36,7 +41,6 @@ Co-directeur : BUISSON Jérémy
 \input{Contribution2/contribution2.tex}
 \input{Contribution3/contribution3.tex}
 \input{Contribution4/contribution4.tex}
-\input{Conclusion/conclusion.tex}
 
 \begin{frame}[plain]
 \begin{thebibliography}{}
