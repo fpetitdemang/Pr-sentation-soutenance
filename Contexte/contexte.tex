@@ -1,63 +1,135 @@
 
+\setbeamerfont{block title}{size=\scriptsize}
+\setbeamerfont{block body}{size=\scriptsize}
+\setbeamerfont{exampleblock title}{size=\scriptsize}
+\setbeamerfont{exampleblock body}{size=\scriptsize}
 
-\begin{frame}{Caractéristique des systèmes de systèmes}
--exemple de SdS,\\
--indep op, managerial, \\
-comportement emergent, développement évolutionnaire\\
--dirigé, collaboratif, ...
+\begin{frame}{Les systèmes de systèmes}
+% \begin{columns}[t]
+%  \begin{column}{5cm}
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.5\textwidth]{imgs/fms.jpeg}\\
+%Surveillance d'inondation
+%\end{figure}
+%\begin{figure}
+%\includegraphics[width=0.5\textwidth]{imgs/internet.jpg}\\
+%Internet
+%\end{figure}
+% \end{column}
+%\begin{column}{5cm}
+%\begin{figure}
+%\includegraphics[width=0.5\textwidth]{imgs/fig_overview_conf1.pdf}\\
+%Services d'urgence
+%\end{figure}
+%\begin{figure}
+%\includegraphics[width=0.5\textwidth]{imgs/web.jpg}\\
+%Web
+%\end{figure}
+% \end{column}
+% \end{columns} 
+\centering 
+\begin{tabular}{cc}
+Dirigé & Consensuel \\
+\includegraphics[width=3cm, height=2cm]{imgs/fms.jpeg} &
+\includegraphics[width=3cm, height=2cm]{imgs/fig_overview_conf1.pdf}\\
+Surveillance d'inondation \vspace{0.2cm}& Service d'urgence\vspace{0.2cm}\\
+Collaboratif & Virtuel \\ 
+\includegraphics[width=3cm, height=2cm]{imgs/internet.jpg} &
+\includegraphics[width=3cm, height=2cm]{imgs/web.jpg}\\
+Internet & Web \\
+\end{tabular}
+\begin{definition}
+ Les SdSs sont des systèmes dont les composants sont géographiquement
+distribués, possèdent leur propre indépendance opérationnelle et
+managériale. 
+L'intéraction de ces composants produit un comportement émérgent. Le
+SdS a un développement évolutionnaire. 
+\end{definition}
 \end{frame}
 
-\begin{frame}{Cause du développement évolutionnaire}
-définition, \\
-raison : 
-formé momentannement, 
-intègre des composants pas prévus à la concepton ,\\
-cycle de vie d'un système indépendant du SdS,\\
+\begin{frame}{Développement évolutionnaire}
+\begin{definition}{}
+Le \textbf{développement évolutionnaire} est l'évolution constante des
+fonctions et buts du SdS. Les fonctions et les buts du SdS changent
+dynamiquement et de nouveaux constituants peuvent être assemblés pour
+les réaliser.
+\end{definition}
+
+\begin{columns}[t]
+\begin{column}{5cm}
+Raisons : 
+\begin{itemize}
+\item environnement opérationnel pas maîtrisé
+\item indépendance managériale
+\item etc.
+\end{itemize}
+\end{column}
+\begin{column}{5cm}
+\begin{figure}
+\centering
+\includegraphics[scale=0.4]{imgs/evolutionnaire.png}
+\end{figure}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}{Pré-pondérance du logiciel dans la conception SdS \& impacte du développement évolutionnaire sur les artefacts logiciels}
-sds connu depuis longtemps\\
-cycle de vie court\\
-logiciel assiste le développement évoluionnaire. 
-exemple atelier comme DANSE et COMPASS. (modélisation, génération, analyse)\\
-déploiement est une activité récurrente moins prise en compte
+\centering
+\includegraphics[scale=0.7]{imgs/logiciel.pdf}
 \end{frame}
 
 
 \begin{frame}{Problématique abordée : reconfiguration dynamique}
-impossible de 
-rédemarrer le SdS,\\
-contrôler les propriétés, \\
-non anticipé, \\
-productivité
+\begin{definition}
+La \textbf{reconfiguration dynamique} est une phase du
+developpement d'une système qui consiste à le modifier pendant qu’il est
+utilisé. La reconfiguration peut-être corrective, fonctionnelle,  ou
+non-fonctionnelle.
+\end{definition}
+\begin{figure}
+inclure schéma? 
+\end{figure}
 \end{frame}
 
 \begin{frame}{Objectif : appliquer principe des patrons de conception logiciels à la reconfiguration dynamique}
-définition des patrons logiciels,\\
-utilisation des patrons logiciels,\\
-utilisation pour la reconfiguration dynamique,\\
-documentation réutilisable,\\
-utilisation des patrons dans le logiciel,\\
-définition d'un processus d'ingénierie.
+\begin{figure}
+\includegraphics[width=10cm, height=3cm]{imgs/slide_application_patron}
+\end{figure}
+\begin{definition}
+Les \textbf{patrons de conception} documentent des solutions de
+conception à des problèmes de conception récurrents.
+\end{definition}
+\begin{exampleblock}{}
+\begin{itemize}
+\item Programmation orientée objet : \textit{Design Patterns: Elements of
+Reusable Object-Oriented Software} 
+\item Architecture des systèmes distribués : \textit{Architecture,
+volume 4: A Pattern Language for Distributed Computing}
+\end{itemize}
+\end{exampleblock}
 \end{frame}
 
 \begin{frame}{Problèmes rencontrés : modélisation de configuration}
-question de base était appliquer le principe des patrons logiciel à la reconfiguration. \\
-besoin de donnée à étudier pour : \\
-- chercher à caractériser l'objet étudié dans un contexte sds, \\
-- identifier des cas d'étude et les propriétés de reconfiguration \\
-manque de cas d'étude complet : \\
-comportant des évolutions et les propriétés à préserver 
-modèle doivent être précis et exacte, cohérent.
+\begin{figure}
+\centering
+\includegraphics[width=10cm, height=4cm]{imgs/slide_probleme_modelisation.jpg}
+\end{figure} 
+\begin{definition}{}
+Un modèle est \textbf{exact} si il est
+factuel ou ne dévie pas trop du fait qu’il modélis
+\end{definition}
+\begin{definition}{}
+Un modèle est \textbf{précis} si il est suffisamment détaillé pour
+répondre au besoin de spécification, d'analyse ou de vérification.
+\end{definition}
 \end{frame}
 
 \begin{frame}{Problèmes recontrés : processus de reconfiguration}
-pas de processus claire pour concevoir une 
-reconfiguration. \\
-état de l'art se focalise sur :\\
-- les opérations de bases, \\
-- l'automatisation d'étape de reconfigiration, \\
--vérification de reconfiguration\\
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{imgs/slide_intro_process.pdf}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Questions de recherche}
@@ -72,3 +144,4 @@ Comment l’architecte doit-il procéder pour faire évoluer un système de syst
 \begin{frame}{Plan de la soutenance}
 \tableofcontents
 \end{frame}
+

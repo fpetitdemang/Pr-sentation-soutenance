@@ -1,0 +1,188 @@
+\section{Introduction}
+
+\subsection{Titre}
+Je vais présenter ma thèse intitulé "Développement évolutionnaire de
+SdS avec une approche par patron de reconfiguration" 
+
+\subsection{Diapo 2}
+\paragraph{}
+Des exemples de SdS sont par exemple :
+Des systèmes de surveillance d'inondation ou les capteurs collaborent
+momentannement pour calculer des informations environnementales
+
+Les services de secours. Les composants sont les services de secours.
+Chacune d'elle possède sa propre indépendance managériale puisqu elle
+dispose de ces propres ressources et définit elle même sont
+organisation interne. Chaque système possède sa propre indépendance
+oéprationnelle car ils peuvent réaliser leur mission indépendamment
+des autres. Les pompiers peuvent faire de lutte contre les incendies
+et faire du secours à personne sans l'aide des autres. Par contre
+l'intéraction avec les autres systèmes peut améliorer la mission de 
+chaque service de secours. Par exemple, la police peut sécuriser et
+faciliter l'accès des pompiers à un sinistre.
+
+Internet où les composants sont des routeurs qui implémentent le
+protocole ip et collabore volontairement 
+
+Le Web ou les composants sont les services web dont la composition
+fournissent d'autres services. 
+\paragraph{}
+Les SdSs sont une
+classe système dont les constituants sont eux mêmes des
+systèmes. Les SdSs héritent des caractéristiques des systèmes
+distribués car
+leur composant sont géographiquement distribué. Mais ce qui les
+différencie de système distribué est que leurs consistuants possèdent
+leur propre
+indépendance managérialle et opérationnelle. La raison de la
+collaboration entre ces systèmes est le comportement emergent produit.
+C'est un comportement qui ne peut pas être réalisé par un seul des
+constituants du SdSs et qui apporte en général un bénéfice à tous les
+participants au SdS.
+
+
+\paragraph{}
+Parmis les SdSs, on peut distinguer plusieurs catégories de SdS
+suivant le niveau coercitif sur ses composants à prendre en compte 
+dans leur ingénirie.
+Les réseaux de capteurs malgrès qu'ils peuvent opérer indendamment du
+SdS ont des objectifs de collaboration imposés.
+
+Les services de secours sont plutôt un SdS consensuel car les
+objectifs du SdS sont décidés de façon consensuel.
+
+Internet définit des objectifs de routage mais l'implication des
+composants reste volontaire.
+
+Le web les objectifs ne sont pas idenifier et la collaboration est la
+collaboration est volontaire.
+
+\paragraph{}
+Dans la thèse, on a étudieé plutôt les systèmes consensuels. Sans
+donner un importance particulière à la catégorie de SdS. Ce qui nous a
+particulierement interessé est la conséquence de l'ensemble de ces
+catéristiques qui est le développement évolutionnaire du sds. 
+
+
+\subsection{Diapo 3}
+\paragraph{}
+On a considéré que le développement évolutionnaire est l'évolution
+permanente des buts et fonctions du SdS pendant sont execution. 
+
+\paragraph{} 
+La cause du développement évolutionnaire est qu'au moment de la
+conception, le SdS ne connaît pas toutes les informations sur
+l'environnement d'execution au moment de la conception. 
+
+Les raisons peuvent être est managériale, les consituants évoluent en
+changeant eux mêmes est les services fournit dans SdS sont impactés.
+Le SdS doit s'accomoder des capacités de ses constituants qui peuvent
+changer. 
+
+Des SdSs sont formés momentanement en réaction à un événement dont
+toutes les informations ne sont pas connu au moment de la conception
+et découvertes seulement pendant la phase d'execution.    
+
+
+\paragraph{}
+Pour toutes ces raisons, le SdS est améné à évoluer régulierement
+après la phase de conception et de déploiement. Ce qui nécessite des
+outils particuliers pour assister l'architecte du SdS afin de maîtriser au
+mieux le développement évolutionnaire. 
+  
+\subsection{Diapo 4}
+
+\paragraph{}
+Comme solution les SdSs sont amanés à intégrer régulierement de plus
+en plus de logiciel pour supporter le developpement évolutionnaire et
+en particulier au niveau de la phase de conception de l'architecture
+des SdSs.
+
+Dans notre thèse on a pris comme référénce deux
+projets européens qui sont DANSE et COMPASS. On peut remarquer la
+pré-pondérance du logiciel dans le processus de conception de
+l'architecture des SdS.
+Les phases de conception intègre des générateur d'architecture, 
+des outils de simulation pour la vérification et divers langage pour
+modéliser les objectifs du SdS, les contraintes à respecter dans les
+architecture et la description du comportement des systèmes
+consitituants. 
+
+\paragraph{} 
+Un aspect du cycle de vie des systèmes moins étudié pour les SdSs est
+la phase de déploiement de la nouvelle architecture dynamiquement et que nous avons
+abordé en particulier dans cette thèse à travers le problème de la
+reconfiguration dynamique.
+
+\subsection{Diapo 5}
+
+\paragraph{}
+La reconfiguration dynamique consiste donc à apporter des
+modifications sur un système pendant qu'il s'execute. Ces
+modifications peuvent être corrective, fonctionnelle si il s'agit
+d'ajouter une fonctionnalité, non fonctionnelle si elle modifie la
+qualité du système.  La difficulté réside dans la maîtrise des parties
+du système interrompue, les dégradations de services, l'intégrité du
+système pendant le temps de la reconfiguration. 
+
+\paragraph{}
+De manière générale, la reconfiguration dynamique vient du besoin de
+pouvoir appliquer des modifications à un système sans le redémarrer
+complétement. Dans un contexte SdS, c'est particulierement intéressant
+car les SdSs sont typiquement des systèmes qui une fois déployés ne
+peuvent pas être arretés puis redemarrés. Les risques seraient suivant
+le sds : économique et/ou humaine. 
+ 
+\paragraph{} 
+Comme solution à la reconfiguration dynamique nous proposons
+d'outiller l'architecte pour l'assister face au développement
+évolutionnaire des SdSs. 
+
+\subsection{Diapo 6}
+
+\paragraph{} 
+Pour adresser un problème de reconfiguration l'architecte doit être
+capable de communiquer ses choix de conception dans un but de
+validation par ces pairs pour améliorer et valider une
+reconfiguration. Ensuite les solutions doivent être capitalisées pour
+résoudre plus facilement des problèmes similaires déjà résolus. C'est
+un gain de temps et de fiabilité des solutions de conception proposée. 
+mêmes erreurs. 
+
+\paragraph{}
+Comme solution on propose d'intégrer la notion de patron de conception
+bien connu dans la domaine logiciel. Les patrons de conception sont
+une solution documentée face à un problème récurrent. Les patrons de
+conceptions les plus connus sont ceux du GoF, ils sont utilisés dans
+la programmation orientée objet pour favoriser la réutilisation du
+code. L'exemple est repris dans d'autres champs du logiciel comme la
+conception d'architecture pour intégrer des aspects non fonctionnelles
+comme la scalabilité ou l'adaptabilité. 
+
+\paragraph{}
+Une première difficulté a été l'étude de SdS pour identifier des
+problème de reconfiguration que l'on pourrait rencontrer lors de
+reconfiguration. Dans l'état de l'art des SdSs peu d'étude de cas se sont intéressées
+à capturer des configurations résultantes d'évolutions successives et
+des propriétés de reconfiguration souhaitées.
+
+\subsection{Diapo 7}
+
+\paragraph{}
+Le challenge à été de capturer des configurations avec le niveau de
+précision suffisant pour capturer des propriétés de reconfiguration à
+étudier mais aussi avec un niveau d'exactitude correcte pour capturer
+des contextes de reconfiguration. 
+%\paragraph{} 
+
+\paragraph{}
+Une dernière difficulté à été de determiner le processus de
+reconfiguration à utiliser pour mettre en \oe{}uvre le concept de patron de
+reconfiguration.
+
+\subsection{Diapo 8} 
+\paragraph{} 
+Dans l'état de l'art on a constaté que la reconfiguration dynamique a
+été principalement étudié du point de vue des langages pour la
+décrire, des propriétés des protocoles de reconfiguration et
+l'automatisation des protocoles de reconfiguration. 

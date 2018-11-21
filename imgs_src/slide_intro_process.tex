@@ -1,0 +1,26 @@
+\documentclass[tikz]{standalone}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning,fit}
+\usepackage{soul}
+\usetikzlibrary{snakes}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+\node[draw] (archi_source)
+{\includegraphics[scale=0.5]{../imgs/fig_overview_conf1.pdf}};
+
+\node[draw, xshift=0.5cm, right=of archi_source] (archi_cible)
+{\includegraphics[scale=0.5]{../imgs/fig_overview_conf1.pdf}};
+
+
+\draw[snake=coil, ->] (archi_source) -- (archi_cible);
+
+\end{tikzpicture}
+
+
+
+\end{document}
