@@ -1,0 +1,130 @@
+\section{Patron et processus de reconfiguration}
+
+\subsection{Diapo :}
+
+Pour la reconfiguration, on s'est fixé comme objectif l'application
+de changement sur le sds pendant qu'il s'execute. 
+D'après l'exemple, que l'on a developpé on va  s'intéresser à
+maîtriser la qualité de service  et
+s'assurer de la cohérence de certaine transaction pendant la
+reconfiguration.
+
+On a pris comme artefact de base pour raisonner sur les reconfigurations
+d'un système, ça description en terme de composant et connecteur.
+L'intérêt pour la reconfiguration et de pouvoir raisonner sur les
+parties modulables du SdS.  cela permet d'identifier les parties
+sujettes au changement et de voir leurs dependances dans le SdS.
+
+On remarque que les opérations qui composent les scripts de
+reconfiguration peuvent être décomposées en opération primitive et
+organisées suivant l'importance des modications réalisées sur le SdS. 
+Elles sont introspectives quand elle l'opération sert à oberser l'état
+du SdS ou intercessives quant elles réalisent des modifications sur le
+système. Les opérations sont : 
+- ... 
+- ...
+
+La conception d'une reconfiguration consiste à produire un script
+composé de ces opérations primitives. A travers la mise en \oe{}uvre
+de ces opérations l'architecte cristalisent un certain nombre de
+décision de conception qui ont un impacte sur la qualité des services
+pendant la reconfiguration et la préservation de la cohérence des
+transactions. 
+
+Si on regarde un cas typique de stratégie de
+reconfiguration qui est la quiescence. L'architecte veut mettre à
+jours un composant sans interrompre les parties du système qui ne sont
+pas dependantes de ce composant. L'architecte va décider de déconnecter
+progressivement les composants qui dépendent du composant à
+remplacer. Puis une fois que ts les composants dépendants sont
+déconnectés, le composant ciblé par la reconfiguration peut être
+remplacé sans rédémarrer complétement le système n'y perdre les
+transactions démarrées.
+
+
+Ce qui nous intéresse est de documenter ce type de stratégie de
+reconfiguration pour la rendre réutilisable. Sur la base du type de
+contenu des patrons de conception en général, un patron réutilisable
+est décrit par son intention, contexte, problème, force, solution et
+conséquence. 
+
+Ce qui peut caractériser un problème de reconfiguration pour les sdss
+est l'hétérogénéité des mécanismes de reconfiguration disponibles au
+moment de la reconfiguration. Ce qui diverge des systèmes distribuées
+puisque souvent les composants implémentent les mêmes mécanismes de
+reconfiguration. Cela introduit de la variabilité également dans les
+décisions que peut prendre l'architecte pour réaliser une même
+stratégie de reconfiguration. Si on reprend l'exemple de la
+quiescence, l'architecte peut décider une approche où le composant
+ciblé par la reconfiguration atteind son état de quiescence
+naturellement ou alors il peut décider suivant les mécanismes
+disponibles de forcer l'état de quiscence pour terminer la
+reconfiguration. 
+
+
+Dans la suite, on va voir d'après l'état de
+l'art comment l'architecte peut documenter sa reconfiguration de façon
+réutilisable mais aussi quel processus d'ingénierie il a à sa
+disposition pour assister le travail de conception d'une
+reconfiguration quand les mécanismes de reconfiguration ne sont pas
+anticipables.   
+
+\subsection{Diapo : }
+On peut classifier le type de documentation suivant son niveau de
+formalité. On a des documentations qui sont très formelles comme
+celles utilisées par Allen ou Oliveira pour documenter des
+reconfigurations. Ce niveau de formalisme permet de vérifier
+formellement qu'une propriété est vérifiée pendant la reconfiguration. 
+Si on regarde les aspects réutilisations, on comprend l'intention de
+la reconfiguration en analysant l'architecture ciblée, le contexte est
+difficilement compréhensible si l'architecte ne connait pas le
+formalisme, la solution est documentée mais difficile à interpreter si
+on ne connait pas le formalisme, les forces et conséquences ne sont pas
+clairement documentées. La réutilisation dans ce cas est partielle. 
+
+Si on regarde des approches moins formelles. Les travaux de Gomaa sont
+plus intéressants. L'intention de la reconfiguration est implicite ici
+car les patrons ont tous pour objectifs de remplacer un composant avec
+une stratégie de quiscence. Le problème est également implicite, il
+s'agit préserver les ... (quiescence), par rapport au documentation
+précedente, on voit que le contexte est documenté par des digrammes de
+collaboration qui montrent le rôle des composants dans l'architecture. 
+La solution est documentée via des diagrammes de collaboration qui
+renseignent sur le rôle des composants entre eux. Par rapport à
+l'approche précédente, la compréhension est simplifiée et elle ne
+nécessite pas de connaissance pointue. 
+
+\subsection{Diapo : }
+
+A ce stade on voit que les approches comme celle de Gomaa sont du
+point de vue de la réutilisation, une type de documentation plus
+pertinent. 
+
+On par rapport au critère de reconfiguration SdS, on voit que voit que
+la solution de Gomaa est limité dans un contexte sds. en effet, on ne
+peut pas faire l'hypothèse que les composants implémentent strictement
+les mêmes mécanismes de reconfiguration. On veut proposer une
+documentation qui prend en compte plus de type de décision de
+reconfiguration. On voit que l'on aura besoin d'expliciter d'autres
+champs pour notre concept de patron de reconfiguration.
+
+Ensuite pour continuer notre approche de reconfiguration, on veut
+s'intéresser au processus de reconfiguration que l'architecte a à sa
+disposition dans l'état de l'art. 
+
+\subsection{Diapo : à déplacer }
+
+Dans un premier temps, cela consiste à considérer la reconfiguration
+comme un aspect à part dans le developpement des systèmes. 
+Donc considérer des langages et outil propre au
+problème de reconfiguration. Ces langages assistent l'architecte pour
+maintenir des propriétés pendant la reconfiguration. 
+On voit que ces méthodes n'aide pas vraiment l'architecte à trouver
+une solution mais plutôt à vérifier le script conçu. 
+
+Des approches qui automatisent la tâche de reconfiguration est de
+dériver automatiquement des scripts de reconfiguration à partir de la
+descrition de l'architecture cible et source ne permettent pas 
+maintenir pendant une reconfiguration. Dans ce cas, les solutions de
+reconfiguration à traiter sont 
+ 
