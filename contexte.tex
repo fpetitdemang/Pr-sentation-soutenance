@@ -5,40 +5,18 @@
 \setbeamerfont{exampleblock body}{size=\scriptsize}
 
 \begin{frame}{Les systèmes de systèmes}
-% \begin{columns}[t]
-%  \begin{column}{5cm}
-%\begin{figure}
-%\centering
-%\includegraphics[width=0.5\textwidth]{imgs/fms.jpeg}\\
-%Surveillance d'inondation
-%\end{figure}
-%\begin{figure}
-%\includegraphics[width=0.5\textwidth]{imgs/internet.jpg}\\
-%Internet
-%\end{figure}
-% \end{column}
-%\begin{column}{5cm}
-%\begin{figure}
-%\includegraphics[width=0.5\textwidth]{imgs/fig_overview_conf1.pdf}\\
-%Services d'urgence
-%\end{figure}
-%\begin{figure}
-%\includegraphics[width=0.5\textwidth]{imgs/web.jpg}\\
-%Web
-%\end{figure}
-% \end{column}
-% \end{columns} 
 \centering 
-\begin{tabular}{cc}
-Dirigé & Consensuel \\
-\includegraphics[width=3cm, height=2cm]{imgs/fms.jpeg} &
-\includegraphics[width=3cm, height=2cm]{imgs/fig_overview_conf1.pdf}\\
-Surveillance d'inondation \vspace{0.2cm}& Service d'urgence\vspace{0.2cm}\\
-Collaboratif & Virtuel \\ 
-\includegraphics[width=3cm, height=2cm]{imgs/internet.jpg} &
-\includegraphics[width=3cm, height=2cm]{imgs/web.jpg}\\
-Internet & Web \\
-\end{tabular}
+%\begin{tabular}{cc}
+%Dirigé & Consensuel \\
+%\includegraphics[width=3cm, height=2cm]{imgs/fms.jpeg} &
+%\includegraphics[width=3cm, height=2cm]{imgs/fig_overview_conf1.pdf}\\
+%Surveillance d'inondation \vspace{0.2cm}& Service d'urgence\vspace{0.2cm}\\
+%Collaboratif & Virtuel \\ 
+%\includegraphics[width=3cm, height=2cm]{imgs/internet.jpg} &
+%\includegraphics[width=3cm, height=2cm]{imgs/web.jpg}\\
+%Internet & Web \\
+%\end{tabular}
+\includegraphics[width=0.4\textwidth, height=0.3\textwidth]{imgs/fig_sos_overview.pdf}
 \begin{definition}
  Les SdSs sont des systèmes dont les composants sont géographiquement
 distribués, possèdent leur propre indépendance opérationnelle et
@@ -56,22 +34,6 @@ dynamiquement et de nouveaux constituants peuvent être assemblés pour
 les réaliser.
 \end{definition}
 
-\begin{columns}[t]
-\begin{column}{5cm}
-Raisons : 
-\begin{itemize}
-\item environnement opérationnel pas maîtrisé
-\item indépendance managériale
-\item etc.
-\end{itemize}
-\end{column}
-\begin{column}{5cm}
-\begin{figure}
-\centering
-\includegraphics[scale=0.4]{imgs/evolutionnaire.png}
-\end{figure}
-\end{column}
-\end{columns}
 \end{frame}
 
 %\begin{frame}{Pré-pondérance du logiciel dans la conception SdS \& impacte du développement évolutionnaire sur les artefacts logiciels}
@@ -92,7 +54,8 @@ inclure schéma?
 \end{figure}
 \end{frame}
 
-\begin{frame}{Objectif : appliquer principe des patrons de conception logiciels à la reconfiguration dynamique}
+\begin{frame}{Solution : patron de reconfiguration et processus de
+conception des reconfigurations}
 \begin{figure}
 \includegraphics[width=10cm, height=3cm]{imgs/slide_application_patron}
 \end{figure}

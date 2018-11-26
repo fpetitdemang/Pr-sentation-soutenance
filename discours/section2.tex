@@ -2,64 +2,16 @@
 
 \subsection{Diapo :}
 
-Pour la reconfiguration, on s'est fixé comme objectif l'application
-de changement sur le sds pendant qu'il s'execute. 
-D'après l'exemple, que l'on a developpé on va  s'intéresser à
-maîtriser la qualité de service  et
-s'assurer de la cohérence de certaine transaction pendant la
-reconfiguration.
-
-On a pris comme artefact de base pour raisonner sur les reconfigurations
-d'un système, ça description en terme de composant et connecteur.
-L'intérêt pour la reconfiguration et de pouvoir raisonner sur les
-parties modulables du SdS.  cela permet d'identifier les parties
-sujettes au changement et de voir leurs dependances dans le SdS.
-
-On remarque que les opérations qui composent les scripts de
-reconfiguration peuvent être décomposées en opération primitive et
-organisées suivant l'importance des modications réalisées sur le SdS. 
-Elles sont introspectives quand elle l'opération sert à oberser l'état
-du SdS ou intercessives quant elles réalisent des modifications sur le
-système. Les opérations sont : 
-- ... 
-- ...
-
-La conception d'une reconfiguration consiste à produire un script
-composé de ces opérations primitives. A travers la mise en \oe{}uvre
-de ces opérations l'architecte cristalisent un certain nombre de
-décision de conception qui ont un impacte sur la qualité des services
-pendant la reconfiguration et la préservation de la cohérence des
-transactions. 
-
-Si on regarde un cas typique de stratégie de
-reconfiguration qui est la quiescence. L'architecte veut mettre à
-jours un composant sans interrompre les parties du système qui ne sont
-pas dependantes de ce composant. L'architecte va décider de déconnecter
-progressivement les composants qui dépendent du composant à
-remplacer. Puis une fois que ts les composants dépendants sont
-déconnectés, le composant ciblé par la reconfiguration peut être
-remplacé sans rédémarrer complétement le système n'y perdre les
-transactions démarrées.
+\textit{Après étude de la réutilisation des documentations, on a définit comme
+critère à la réutilisation  ... }
 
 
-Ce qui nous intéresse est de documenter ce type de stratégie de
-reconfiguration pour la rendre réutilisable. Sur la base du type de
+
+Sur la base du type de
 contenu des patrons de conception en général, un patron réutilisable
 est décrit par son intention, contexte, problème, force, solution et
 conséquence. 
 
-Ce qui peut caractériser un problème de reconfiguration pour les sdss
-est l'hétérogénéité des mécanismes de reconfiguration disponibles au
-moment de la reconfiguration. Ce qui diverge des systèmes distribuées
-puisque souvent les composants implémentent les mêmes mécanismes de
-reconfiguration. Cela introduit de la variabilité également dans les
-décisions que peut prendre l'architecte pour réaliser une même
-stratégie de reconfiguration. Si on reprend l'exemple de la
-quiescence, l'architecte peut décider une approche où le composant
-ciblé par la reconfiguration atteind son état de quiescence
-naturellement ou alors il peut décider suivant les mécanismes
-disponibles de forcer l'état de quiscence pour terminer la
-reconfiguration. 
 
 
 Dans la suite, on va voir d'après l'état de
@@ -127,4 +79,64 @@ dériver automatiquement des scripts de reconfiguration à partir de la
 descrition de l'architecture cible et source ne permettent pas 
 maintenir pendant une reconfiguration. Dans ce cas, les solutions de
 reconfiguration à traiter sont 
- 
+
+\subsection{Diapo : Patron de reconfiguration - délimitation du problème}
+
+Le problème de reconfiguration se réduise à la description du passage
+d'une architecture à une autre. 
+On peut cependant, raffiner en différent problème suivant les
+solutions dévéloppés et en abstraire les régularités pour définir des
+patrons de reconfiguration. 
+
+On va essayer de déduire l'ensemble des besoins que cherche à
+satisfaire la solution pour capturer le problème exprimer par le
+patron. 
+On a trouvé qu'un bon moyen est d'adord d'expimer l'architecture
+intiale, puis celle ciblée. 
+L'architecture est bon support pour la compréhension du problème lié à
+qualité de service puisqu'elle modélise les dépendances fonctionnelles
+enntre les composants. 
+
+Ensuite on propose de documenter les contraintes que doivent satisfaire
+la solution. Elles peuvent être structurelles ou comportementales.
+
+Les forces doivent expliquer les principes mis \oe{}vre dans la
+solution. Cela doit aider l'archticte à comprendre quelles sont les
+points importants de la solution.  
+
+\subsection{Diapo : Patron de reconfiguration - rédaction de la solution}
+
+Ensuite la solution consiste à décrire les mécanismes d'évolution
+et d'une grammaire de reconfiguration. La grammaire de reconfiguration
+consiste à  décrire les opérations de reconfiguration et leur ordre
+afin de d'execution. Pour documenter la grammaire de reconfiguration
+nous nous sommes appuyé sur des diagrammes de collaboration et d'état
+ainsi qu'une description textuelle. 
+
+
+\subsection{Diapo : Patron de reconfiguration - amélioration de la
+ré-utilisation}
+
+Naturellement chaque solution à un impacte sur les aspects non
+fonctionnels du système pendant la reconfiguration qui doivent être
+documenté. 
+
+Pour finir, la documentation doit permettre à l'architecte d'évaluer
+rapidement la pertinence de la solution sans avoir à comprendre en
+détail le patron de reconfiguration. Dans l'idée de titre des patrons, on a garder l'idée de la métaphore.
+Elle intéressante pour aider l'architecte dans la compréhension du
+patron de reconfiguration. On a par exemple,
+\begin{itemize}
+\item quiescence 
+\item co-evolution
+\item re-routage
+\item tranquilité
+\end{itemize}
+
+Dans la continuité du titre l'intention doit aboutir à la
+comprenhension de la métaphore. en expliquant, un approche naive et
+ses inconvénients puis on explique l'idée générale du patron et ses
+avantages en comparaison avec l'approche naive. 
+l'approche du patron  
+
+\subsection{résumé } 
