@@ -1,57 +1,171 @@
 \section{Patron et processus de reconfiguration}
 
-\subsection{Diapo :}
+\subsection{Diapo : Réutilisation de décision de reconfiguration}
 
-\textit{Après étude de la réutilisation des documentations, on a définit comme
-critère à la réutilisation  ... }
+Pour définir des critères de documentation réutilisables, on a fait la
+synhtèse des parties descriptives des patrons de conception dans
+l'état de l'art. On en en tirer la liste suivante. 
+\begin{itemize}
+\item titre
+\item intention,
+\item contexte, 
+\item problème, 
+\item solution 
+\item conséquence.
+\end{itemize} 
+
+\paragraph{} 
+Le titre et l'intention on pour objectif de donner l'intuiton du
+principe mis en \oe{}uvre par la solution documentée. En général, le titre
+correpond à une métaphore du principe suivi par la solution et
+l'intention explique pourquoi une solution naive ne
+fonctionne pas et quel est un principe plus adapté.   
+
+\paragraph{} 
+Le contexte va décrire quelles sont les hypothèses considérées par le
+patron.  En somme, les pré-requis et les facteurs qui empêcheraient
+l'application de la solution. 
+
+\paragraph{} 
+Le problème va expliquer quels sont les besoins que cherchent à
+satisfaire la solution. et quelles sont les forces mise en \oe{}vre
+par la solution. 
+
+\paragraph{} 
+Ensuite la solution documente comment est résolue le problème et enfin
+les conséquences expliquent en générale quels sont les effets sur les
+aspects non fonctionnels ou les considérations d'implémentation. 
 
 
-
-Sur la base du type de
-contenu des patrons de conception en général, un patron réutilisable
-est décrit par son intention, contexte, problème, force, solution et
-conséquence. 
-
-
-
-Dans la suite, on va voir d'après l'état de
-l'art comment l'architecte peut documenter sa reconfiguration de façon
-réutilisable mais aussi quel processus d'ingénierie il a à sa
-disposition pour assister le travail de conception d'une
-reconfiguration quand les mécanismes de reconfiguration ne sont pas
-anticipables.   
-
-\subsection{Diapo : }
+\subsection{Diapo : Documentation formelle Allen}
 On peut classifier le type de documentation suivant son niveau de
 formalité. On a des documentations qui sont très formelles comme
 celles utilisées par Allen ou Oliveira pour documenter des
 reconfigurations. Ce niveau de formalisme permet de vérifier
-formellement qu'une propriété est vérifiée pendant la reconfiguration. 
-Si on regarde les aspects réutilisations, on comprend l'intention de
-la reconfiguration en analysant l'architecture ciblée, le contexte est
-difficilement compréhensible si l'architecte ne connait pas le
-formalisme, la solution est documentée mais difficile à interpreter si
-on ne connait pas le formalisme, les forces et conséquences ne sont pas
-clairement documentées. La réutilisation dans ce cas est partielle. 
 
+%%%%
+Si on regarde la proposition de Allen, il propose  de
+réutilisation en considérant la phase de reconfiguration comme un
+aspect à part dans le processus de developpement d'un système et donc
+en proposant un langage et des outils dédiés à la reconfiguration
+dynamique. 
+%
+
+\paragraph{} 
+Il propose pas de patron en particulier. Si on regarde comment il
+spécifie une reconfiguration. on voit que : 
+%
+\paragraph{} 
+le contexte est définit par le langage WrightADL qui base sa
+sémantique sur CSP. 
+Le contexte se caractérise par une description composant/connecteur.
+Ici on voit que contexte est décrit par une architecture
+client/serveur.
+%
+\paragraph{} 
+le problème est spécifié par des contraintes structurelles à respecter. pendant la
+reconfiguration. On voit qu'un composant serveur doit toujours être connecté à
+un composant client.  
+%
+\paragraph{} 
+la solution est documenté par les événements qui déclenchent les
+opérations de reconfiguration. On voit que lorsqu'un événement capture
+que le serveur principal est hors service, la reconfiguration consiste
+à déconnecter le client du serveur principal, vers le serveur
+secondaire.
+%
+\paragraph{} 
+les conséquences discuttent des aspects techniquent : notamment de
+l'implémentation des événements et de la distribution du connecteur.  
+
+formellement qu'une propriété est vérifiée pendant la reconfiguration. 
+
+\subsection{Diapo : Documentation formelle}
+%%%%%
+\paragraph{} 
+Si on regarde en détaille la proposition de Oliveira. 
+%
+Si on regarde les aspects réutilisations, elle concerne la description
+d'opération de reconfiguration primitive récrruente et la description
+formelle qui l'accompagne.  
+%
+\paragraph{} 
+Le titre décrit directement l'opération appliquée.
+%
+\paragraph{} 
+Par rapport à nos critère la reconfiguration est trop bas niveau pour
+décrire une intention de reconfiguration. 
+%
+\paragraph{} 
+le contexte est définit par la description de primitive de
+reconfiguration. qui sont : constante, parallèlisation, union,
+découpage, suppression 
+%
+\paragraph{} 
+Le problème, il est décrit par l'architecture source et ciblée. mais
+il y pas vraiment de contrainte à respecter.... si ce n'est qu'à la
+fin l'architecture ciblée est atteinte.  
+%
+\paragraph{} 
+la solution est documentée mais difficile à interpreter si
+on ne connait pas le formalisme, de plus elle ne résoud pas de
+problème particilier. 
+%
+\paragraph{} 
+les conséquences ne sont pas
+clairement documentées. comme le niveau est bas elle ne capture pas de
+conséquence.   
+%
+\paragraph{} 
+La réutilisation dans ce cas est partielle. Dans ce, c'est
+prinpalement car les patrons sont trop bas niveau pour être
+réutilisés. ils ne capturent pas de problème de conception. 
+
+%%% 
+\paragraph{} 
+Les documentation consiste à considérer la reconfiguration
+comme un aspect à part dans le developpement des systèmes. 
+Donc considérer des langages et outil propre au
+problème de reconfiguration. Ces langages assistent l'architecte pour
+maintenir des propriétés pendant la reconfiguration. 
+
+\subsection{Diapo : Documentation semi-formelle}
+\paragraph{}
 Si on regarde des approches moins formelles. Les travaux de Gomaa sont
-plus intéressants. L'intention de la reconfiguration est implicite ici
+plus intéressants. Les patrons de reconfiguration définissent une
+solution de reconfiguration par rapport à un problème de
+reconfiguration qui est la quiescence. 
+
+\paragraph{}
+Le titre du patron fait référence à contexte de reconfiguration et au
+principe mis en \oe{}uvre. 
+
+\paragraph{}
+L'intention et le problème de la reconfiguration sont implicites ici
 car les patrons ont tous pour objectifs de remplacer un composant avec
-une stratégie de quiscence. Le problème est également implicite, il
-s'agit préserver les ... (quiescence), par rapport au documentation
+le principe de quiscence.
+
+\paragraph{}
+par rapport au documentation
 précedente, on voit que le contexte est documenté par des digrammes de
 collaboration qui montrent le rôle des composants dans l'architecture. 
-La solution est documentée via des diagrammes de collaboration qui
-renseignent sur le rôle des composants entre eux. Par rapport à
+
+Ensuite la solution est documentée via des diagrammes de collaboration qui
+renseignent sur le rôle des composants entre eux. 
+
+\paragraph{}
+Par rapport à
 l'approche précédente, la compréhension est simplifiée et elle ne
 nécessite pas de connaissance pointue. 
 
 \subsection{Diapo : }
 
+\paragraph{}
 A ce stade on voit que les approches comme celle de Gomaa sont du
 point de vue de la réutilisation, une type de documentation plus
 pertinent. 
 
+\paragraph{}
 On par rapport au critère de reconfiguration SdS, on voit que voit que
 la solution de Gomaa est limité dans un contexte sds. en effet, on ne
 peut pas faire l'hypothèse que les composants implémentent strictement
@@ -60,34 +174,23 @@ documentation qui prend en compte plus de type de décision de
 reconfiguration. On voit que l'on aura besoin d'expliciter d'autres
 champs pour notre concept de patron de reconfiguration.
 
+\paragraph{}
 Ensuite pour continuer notre approche de reconfiguration, on veut
 s'intéresser au processus de reconfiguration que l'architecte a à sa
 disposition dans l'état de l'art. 
 
-\subsection{Diapo : à déplacer }
 
-Dans un premier temps, cela consiste à considérer la reconfiguration
-comme un aspect à part dans le developpement des systèmes. 
-Donc considérer des langages et outil propre au
-problème de reconfiguration. Ces langages assistent l'architecte pour
-maintenir des propriétés pendant la reconfiguration. 
-On voit que ces méthodes n'aide pas vraiment l'architecte à trouver
-une solution mais plutôt à vérifier le script conçu. 
-
-Des approches qui automatisent la tâche de reconfiguration est de
-dériver automatiquement des scripts de reconfiguration à partir de la
-descrition de l'architecture cible et source ne permettent pas 
-maintenir pendant une reconfiguration. Dans ce cas, les solutions de
-reconfiguration à traiter sont 
-
+ 
 \subsection{Diapo : Patron de reconfiguration - délimitation du problème}
 
-Le problème de reconfiguration se réduise à la description du passage
+\paragraph{}
+Le problème de reconfiguration se réduit à la description du passage
 d'une architecture à une autre. 
 On peut cependant, raffiner en différent problème suivant les
 solutions dévéloppés et en abstraire les régularités pour définir des
 patrons de reconfiguration. 
 
+\paragraph{}
 On va essayer de déduire l'ensemble des besoins que cherche à
 satisfaire la solution pour capturer le problème exprimer par le
 patron. 
@@ -97,42 +200,51 @@ L'architecture est bon support pour la compréhension du problème lié à
 qualité de service puisqu'elle modélise les dépendances fonctionnelles
 enntre les composants. 
 
+\paragraph{}
 Ensuite on propose de documenter les contraintes que doivent satisfaire
 la solution. Elles peuvent être structurelles ou comportementales.
 
+\paragraph{}
 Les forces doivent expliquer les principes mis \oe{}vre dans la
 solution. Cela doit aider l'archticte à comprendre quelles sont les
 points importants de la solution.  
 
+%%ù
+\paragraph{}
+Dans la littérature, on a essayé d'analyser des solutions
+récurrente. On a constaté qu'une solution consistait à appliquer des
+reconfiguration graduellement. On a définit comme contexte
+architectural ..., puis comme contrainte que ..., et force ...  
+
 \subsection{Diapo : Patron de reconfiguration - rédaction de la solution}
 
+\paragraph{}
 Ensuite la solution consiste à décrire les mécanismes d'évolution
 et d'une grammaire de reconfiguration. La grammaire de reconfiguration
 consiste à  décrire les opérations de reconfiguration et leur ordre
 afin de d'execution. Pour documenter la grammaire de reconfiguration
 nous nous sommes appuyé sur des diagrammes de collaboration et d'état
 ainsi qu'une description textuelle. 
-
+ 
+\paragraph{}
+On a documenté la reconfiguration à partir du schéma ... 
+et d'une description textuelle ... qui indique la sémantique des
+opérations. 
 
 \subsection{Diapo : Patron de reconfiguration - amélioration de la
 ré-utilisation}
 
+\paragraph{}
 Naturellement chaque solution à un impacte sur les aspects non
 fonctionnels du système pendant la reconfiguration qui doivent être
 documenté. 
 
+\paragraph{}
 Pour finir, la documentation doit permettre à l'architecte d'évaluer
 rapidement la pertinence de la solution sans avoir à comprendre en
 détail le patron de reconfiguration. Dans l'idée de titre des patrons, on a garder l'idée de la métaphore.
-Elle intéressante pour aider l'architecte dans la compréhension du
-patron de reconfiguration. On a par exemple,
-\begin{itemize}
-\item quiescence 
-\item co-evolution
-\item re-routage
-\item tranquilité
-\end{itemize}
 
+\paragraph{}
 Dans la continuité du titre l'intention doit aboutir à la
 comprenhension de la métaphore. en expliquant, un approche naive et
 ses inconvénients puis on explique l'idée générale du patron et ses
@@ -140,3 +252,28 @@ avantages en comparaison avec l'approche naive.
 l'approche du patron  
 
 \subsection{résumé } 
+
+\paragraph{}
+A ce stade on a identifié et documenté plusieurs patrons de
+reconfiguration. On a donc la 
+
+\begin{itemize}
+\item quiescence : dont l'objectif le principe est de rendre passif,
+les composants dépendant du composant ciblé par la reconfiguration. 
+\item tranquilité : est une variante de la quiescence qui assouplie
+les critères de reconfiguration. Elle décrit les conditions dans
+lesquelles la reconfiguration pêtre réalisée sans attendre l'état de
+tranquilité
+\item co-evolution : contrairement à la quiescence et tranquilité, à
+déployer directement la nouvelle version du composant ciblé par la
+reconfiguration. La conséquence est que les deux versions d'un
+composant s'execute simultanément. 
+\item opportuniste : par rapport aux autres, il concerne une
+granularité différente puisqu'il concerne seulement une opération de
+déconnexion et connexion qui est réalisé dès que l'occasion se
+présente.  
+\end{itemize}
+
+
+
+

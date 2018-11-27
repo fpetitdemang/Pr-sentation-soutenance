@@ -1,0 +1,87 @@
+\section{Processus de reconfiguration}
+
+\subsection{Processus de reconfiguration existant}
+
+Une fois que l'on a documenté des solutions de reconfiguration
+réutilables on s'est interessé au processus de conception.
+
+Une approche dans la conception des reconfigurations est de
+dériver de fournir en entrée du processus une architecture initiale et
+une architecture ciblée. Dans ce cas, il existe des approche
+automatique où la reconfiguration est dérivée automatiquement à partir de la
+descrition de l'architecture cible et source. C'est le cas de la
+proposition de Boyer, dans son papier, elle propose à partir de la
+différence architecturale de l'archi. source et cible de dérivé toutes
+les opérations de reconfiguruation (les connexions ajouter et
+supprimées) puis défini suivant : déconnexions des connecteurs
+optionnels, arêt composant, déconnexion des connexions mandataires.
+puis : supprssion des composants, création des nouveaux, connexions,
+démarrée.   
+
+Dans d'autres cas, elle
+définie manuellement mais aucune approche n'est fournie pour assister
+l'architecte dans la conception. L'assistance est fournie par des
+outils basés sur des méthodes formelles (model checking, preuve) pour
+vérifier les propriétés de la reconfiguration. Il ny'a pas d'aide
+particulière pour assister l'architecte pour la phase de conception. 
+
+Dans l'état de l'art de la conception des reconfigurations, on
+remarque les reconfigurations interviennent dans des environnements de
+reconfiguration connus à l'avance. Dans un environnement SdS,  
+Cela facilite l'automatisation de la conception des reconfigurations,
+l'architecte à besoin de fournir in fine l'architecture ciblée par la
+reconfiguration.
+
+
+\subsection{Processus de reconfiguration pour les SdSs}
+
+%supporte des opérations de reconfiguration hétérogène
+Dans un contexte SdS, les mécanismes de reconfiguration ne sont pas
+homogènes et sont succeptibles d'évoluer ainsi que les exigences de
+reconfiguration. Par conséquent, l'architecte doit reprendre la
+conception du script, sachant que les approches automatiques font
+l'hyothèse que ttes les opérations de reconfiguration sont
+disponibles. 
+
+%supporte les contraintes dynamiques.
+Par conséquent, la conception d'une reconfiguration dans un contexte
+SdS devient plus complexe. On propose un processus de reconfiguration
+qui permette à l'architecte d'expliciter les dégradations de service
+qui peuvent survenir pendant la reconfiguration. On va considerer que
+les dégradations de services peuvent momentanné impacter des parties
+de l'architecture différente dans le temps. 
+
+
+
+\subsection{Proposition d'un processus de reconfiguration}
+Dans ce contexte, on a proposé un processus de reconfiguration qui
+tiennent compte :
+- des 
+
+On a proposé dans la thèse d'expliter un processus qui prennent en
+compte ces contraintes dynamiques et ainsi de considérer le dégradation
+de service pendant la reconfiguration. mais aussi la variabilité des
+décisions qui peuvent intervenir à cause de l'environneent de
+reconfiguration hétégrogène. 
+
+On a proposé un processus itératif et récursive. Donc l'idée est que
+la reconfiguration se compose d'au moins trois phases : 
+preparation : opérations de reconfiguration préalable au opération ...
+modification : action souhaité intialement
+nettoyage : suppression des mécanismes liée à la reconfiguration 
+
+On a considéré que chaque phase de prepration peut être également
+décomposé en phase : preparation, modification et nettoyage. 
+
+
+\subsection{Utilisation des patrons de reconfigiration}
+
+Le processus s'appuie sur les patrons de reconfiguration. Dans un
+premier temps, l'architecte analyse les modifications à apportées. 
+
+il utilise le catalogue de patron pour identifier les problèmes qu'il
+peut rencontrer et comment les résoudre. ou il définit un nouveau
+patron. 
+
+Dans le cas, ou le solution n'est pas directement applicable alors il
+peut décider d'une nouvelle itération .

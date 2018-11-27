@@ -1,5 +1,0 @@
-\beamer@endinputifotherversion {3.36pt}
-\beamer@sectionintoc {1}{Framework pour la mod\IeC {\'e}lisation des SdSs}{11}{0}{1}
-\beamer@sectionintoc {2}{Patron de reconfiguration et Processus de reconfiguration}{27}{0}{2}
-\beamer@sectionintoc {3}{Exp\IeC {\'e}rimentation}{37}{0}{3}
-\beamer@sectionintoc {4}{Conclusion et synth\IeC {\`e}se}{44}{0}{4}

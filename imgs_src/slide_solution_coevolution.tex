@@ -1,0 +1,51 @@
+\documentclass[tikz]{standalone}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning,fit}
+\usepackage{soul}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \node[draw,fill,minimum width=5mm,circle] (initial){};
+
+  \begin{scope}[every node/.style={draw,rounded
+rectangle,align=center,text width=2.5cm,minimum height=3em}]
+    \node[right] (synchronised) at ([xshift=20mm]initial)
+{synchronisé};
+    \node[right] (olddesync) at
+([xshift=45mm,yshift=15mm]synchronised)  {ancien désynchronisé};
+    \node[right] (newdesync) at
+([xshift=45mm,yshift=-15mm]synchronised)  {nouveau désynchronisé};
+  \end{scope}
+
+ \begin{scope}[->]
+    \draw (initial) to node[above] {migrer} (synchronised);
+
+    \draw (synchronised) to[out=30,in=180]  node[above left]
+{{transmettre vers nouveau}} (olddesync);
+    \draw (olddesync) to[out=190,in=10] node[below right]
+{{synchroniser ancien}} (synchronised);
+   \draw (olddesync.10) ..controls
+([xshift=5mm,yshift=5mm]olddesync.10) and
+([xshift=5mm,yshift=-5mm]olddesync.350) .. (olddesync.350)
+node[right,pos=.5,text width=3cm,inner sep=0pt] {{transmettre\\vers
+nouveau}};
+
+    \draw (synchronised) to[out=330,in=180] node[below left]
+{{transmettre vers ancien}} (newdesync);
+    \draw (newdesync) to[out=170,in=350] node[above right]
+{{synchroniser nouveau}} (synchronised);
+   \draw (newdesync.10) ..controls
+([xshift=5mm,yshift=5mm]newdesync.10) and
+([xshift=5mm,yshift=-5mm]newdesync.350) .. (newdesync.350)
+node[right,pos=.5,text width=3cm,inner sep=0pt] {{transmettre\\vers
+ancien}};
+
+ \end{scope}
+\end{tikzpicture}
+
+
+
+\end{document}
