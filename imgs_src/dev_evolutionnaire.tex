@@ -20,16 +20,16 @@
 {\includegraphics[scale=0.5]{../imgs/fig_overview_conf3.pdf}};
 %
 \node[yshift=-0.25cm] (label1) at (archi_1.south)
-{Collaboration opérationnelle interdep.};
+{\underline{\textbf{Collaboration opérationnelle interdep.}}};
 
 \node[yshift=-0.25cm] (label2) at (archi_2.south)
-{Collaboration stratégique interdep.};
+{\underline{\textbf{Collaboration stratégique interdep.}}};
 
-\node[yshift=-0.25cm] (label2) at (archi_3.south)
-{Collaboration médicale};
+\node[yshift=-0.25cm] (label3) at (archi_3.south)
+{\underline{\textbf{Collaboration médicale}}};
 
-\draw[snake=coil, ->] (archi_1) -- (archi_2);
-\draw[snake=coil, ->] (archi_2) -- (archi_3);
+\draw[snake, ->] (archi_1.north) -- (label2);
+\draw[snake, ->] (label2) -- (archi_3.north);
 \end{tikzpicture}
 
 

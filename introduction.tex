@@ -16,23 +16,29 @@
 %\includegraphics[width=3cm, height=2cm]{imgs/web.jpg}\\
 %Internet & Web \\
 %\end{tabular}
-\includegraphics[width=0.4\textwidth, height=0.3\textwidth]{imgs/fig_sos_overview.pdf}
-\begin{definition}
- Les SdSs sont des systèmes dont les composants sont géographiquement
-distribués, possèdent leur propre indépendance opérationnelle et
-managériale. 
-L'intéraction de ces composants produit un comportement émérgent. Le
-SdS a un développement évolutionnaire. 
-\end{definition}
+\begin{block}{}
+Les \textbf{systèmes de systèmes} (SdSs) sont des systèmes dont les
+composants sont des systèmes. Ces systèmes participants (CSs) sont \textbf{géographiquement
+distribués}, possèdent leur propre \textbf{indépendance
+opérationnelle} et
+\textbf{managériale}. 
+L'intéraction de ces CSs produit un \textbf{comportement
+émérgent}. Le
+SdS a un \textbf{développement évolutionnaire}. 
+\end{block}
+\begin{figure}
+\includegraphics[height=0.5\textwidth]{imgs/fig_sos_overview.pdf}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Développement évolutionnaire}
-\begin{definition}{}
-Le \textbf{développement évolutionnaire} est l'évolution constante des
-fonctions et buts du SdS. Les fonctions et les buts du SdS changent
+\begin{block}{}
+Le \textbf{développement évolutionnaire} est l'\textbf{évolution
+constante} des
+\textbf{fonctions} et \textbf{buts} du SdS. Les fonctions et les buts du SdS changent
 dynamiquement et de nouveaux constituants peuvent être assemblés pour
 les réaliser.
-\end{definition}
+\end{block}
 \centering
 \includegraphics[width=8cm]{imgs/dev_evolutionnaire.pdf}
 \end{frame}
@@ -43,16 +49,22 @@ les réaliser.
 %\end{frame}
 
 
-\begin{frame}{Problématique abordée : reconfiguration dynamique}
-\begin{definition}
+\begin{frame}{Problématique : variabilité des décisions reconfiguration dynamique}
+\begin{block}{}
 La \textbf{reconfiguration dynamique} est une phase du
 developpement d'une système qui consiste à le modifier pendant qu’il est
 utilisé. La reconfiguration peut-être corrective, fonctionnelle,  ou
 non-fonctionnelle.
-\end{definition}
+\end{block}
 \begin{figure}
 \includegraphics[height=6cm]{imgs/description_reconfiguration}
 \end{figure}
+
+Caractéristiques d'une reconfiguration pour SdS : 
+\begin{itemize}
+\item évolution du contexte de reconfiguration
+\item opérations de reconfiguration hétérogène
+\end{itemize}
 \end{frame}
 %
 \begin{frame}{Solution : patron de reconfiguration et processus de
@@ -60,10 +72,10 @@ conception des reconfigurations}
 \begin{figure}
 \includegraphics[width=10cm, height=3cm]{imgs/slide_application_patron}
 \end{figure}
-\begin{definition}
-Les \textbf{patrons de conception} documentent des solutions de
-conception à des problèmes de conception récurrents.
-\end{definition}
+\begin{block}{}
+Les \textbf{patrons de reconfiguration dynamique} documentent des solutions de
+reconfiguration dynamique à des problèmes de conception récurrents.
+\end{block}
 %\begin{exampleblock}{}
 %\begin{itemize}
 %\item Programmation orientée objet : \textit{Design Patterns: Elements of
@@ -100,8 +112,8 @@ conception à des problèmes de conception récurrents.
 Comment l’architecte doit-il procéder pour faire évoluer un système de systèmes après son déploiement, dans le cadre du développement évolutionnaire ?\\
 \begin{itemize}
     \item[Q1] Comment l’architecte modélise-t-il la configuration du système avec le niveau de précision et d’exactitude requis ?
-    \item[Q2] Quel processus d’ingénierie l’architecte doit-il suivre pour concevoir la reconfiguration d’évolution du système de systèmes ?
-    \item[Q3] Comment l’architecte peut-il documenter ses choix de conception d’une reconfiguration ?
+    \item[Q2] Comment l’architecte peut-il documenter ses choix de conception d’une reconfiguration ?
+    \item[Q3] Quel processus d’ingénierie l’architecte doit-il suivre pour concevoir la reconfiguration d’évolution du système de systèmes ?
 \end{itemize}
 \end{frame}
 

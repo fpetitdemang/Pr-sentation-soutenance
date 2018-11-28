@@ -159,10 +159,12 @@ est :
 \item le contexte de reconfiguration (les opérations de
 reconfiguration disponibles) est amené à évoluer. 
 \item mais aussi l'hétérogénéité des mécanismes de reconfiguration disponibles au
-moment de la reconfiguration. Ce qui diverge des systèmes distribuées
-puisque souvent les composants implémentent les mêmes mécanismes de
-reconfiguration. 
+moment de la reconfiguration. 
 \end{itemize}
+
+Ce qui diverge des systèmes distribuées
+puisque souvent les composants implémentent les mêmes mécanismes de
+reconfiguration et n'évolue pas. 
 %
 Cela introduit de la variabilité également dans les
 décisions que peut prendre l'architecte pour réaliser une même
@@ -196,13 +198,17 @@ un gain de temps et de fiabilité des solutions de conception proposée.
 mêmes erreurs. 
 
 Comme solution on propose la notion de patron de
-reconfiguration.
+reconfiguration dynamique, que l'on a définit comme la documentation
+de solution à des prblèmes récurrents de reconfiguration dynamique.
+
+Cette notion est un premier pas pour prendre en compte la variabilité
+des décisions de reconfiguration. 
 
 \paragraph{}
 Les patrons de reconfiguration ne sont pas utilisables tels quels.
 En effet, on pense qu'en pratique l'architecte sera amené à définir
-des architectures intermédiaires avant d'appliquer les
-reconfigurations initialement décidés. En somme l'application d'un
+des phases préliminaires à l'application de reconfiurraiton. En somme
+l'application d'un
 script de reconfiguration impliquera d'autres reconfigurations. 
 % 
 nous avons documenté les étapes de conception qui permette
