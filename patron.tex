@@ -1,9 +1,30 @@
 \section{Patron de reconfiguration}
 
-\begin{frame}{Critères de réutilisation des décisions de reconfiguration}
+%
+\begin{frame}{Comparaison des critères de réutilisation des décisions de reconfiguration
+pour les SdSs}
+\begin{table}[]
+\resizebox{\textwidth}{!}{%
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\backslashbox{Auteurs}{Critères}               & Titre     & Intention & Contexte  & Problème  & Solution  & Conséquence \\
+\hline
+Allen, 1998    & \ding{53} & \ding{53} & Partielle & Partielle & Partielle & \ding{53}   \\
+\hline
+Oliveira, 2015 & Partielle & Partielle & Partielle & Partielle & Partielle & \ding{53}   \\
+\hline
+Gomaa, 2004    & Partielle & \ding{53} & Partielle & \ding{53} &\ding{51}  & \ding{53}   \\
+\hline
+\end{tabular}
+}
+\end{table}
+\end{frame}
+
+\begin{frame}{Réutilisation des décisions de reconfiguration}
 \begin{itemize}
 \setlength\itemsep{0.7cm}
-\item \textbf{Titre} : méthaphore                                                                   
+\item \textbf{Titre} : métaphore                                                                   
 \item \textbf{Intention} : description générale                                                                   
 \item \textbf{Contexte} : hypothèse de la solution                                                                    
 \item \textbf{Problème} : besoins à satisfaire                                                                     
@@ -13,92 +34,8 @@ fonctionnels
 \end{itemize} 
 \end{frame}
 
-
-\begin{frame}[fragile]{Type de documentation des décisions : docu.
-formelle \emph{Allen, 1998}}
-\centering
-\begin{figure}
-\begin{subfigure}[b]{0.4\textwidth}
-\includegraphics[width=5cm]{imgs/slide_fault-tolerance.png}
-\caption{Contexte et problème}
-\end{subfigure}
-\begin{subfigure}[b]{0.4\textwidth}
-\includegraphics[width=5cm]{imgs/slide_reconf_specif.png}
-\caption{Solution}
-\end{subfigure}
-\end{figure}
-
-\begin{table}[]
-\resizebox{0.85\textwidth}{!}{%
-\begin{tabular}{ccccccc}
-         & Titre     & Intention & Contexte  & Problème  & Solution  & Conséquence \\
-Allen    & \textcolor{red}{\ding{53}} & \textcolor{red}{\ding{53}} &
-\ding{51} & \ding{51} & \ding{51} & \textcolor{red}{\ding{53}}   \\ 
-\end{tabular}}
-\end{table}
+\begin{frame}{Patron de reconfiguration : co-évolution}
 \end{frame}
-
-\begin{frame}[fragile]{Type de documentation des décisions : docu. formelle
-\emph{Oliveira, 2015}}
-\centering
-\begin{figure}
-\includegraphics[width=8cm]{imgs/slide_oliveira_primitive.png}
-\caption{Contexte}
-\end{figure}
-\begin{figure}
-\includegraphics[width=8cm]{imgs/slide_oliveira_patron.png}
-\caption{Problème}
-\end{figure}
-\begin{table}[]
-\resizebox{0.85\textwidth}{!}{%
-\begin{tabular}{ccccccc}
-         & Titre     & Intention & Contexte  & Problème  & Solution  & Conséquence \\
-Oliveira & Partielle & \ding{53} & \ding{51} & Partielle & Partielle & \ding{53} \\
-\end{tabular}}
-\end{table}
-\end{frame}
-
-\begin{frame}[fragile]{Type de documentation des décisions : docu.
-semi-formelle
-\emph{Gomaa, 2004}}
-\textbf{Titre :} Master-Slave Reconfiguration Pattern, Centralized Control
-Reconfiguration Pattern, Client / Server Reconfiguration Pattern,
-Decentralized Control Reconfiguration
-Pattern.
-\begin{figure}
-\begin{subfigure}[b]{0.5\textwidth} % "0.45" donne ici la largeur
-\includegraphics[width=3cm]{imgs/gomaa_contexte}
-\caption{Contexte}\label{fig:orchid}
-\end{subfigure}
-\begin{subfigure}[b]{0.5\textwidth} % "0.45" donne ici la largeur
-\includegraphics[width=3cm]{imgs/gomaa_solution}\\
-\caption{Solution}\label{fig:orchid}
-\end{subfigure}
-\end{figure}
-\begin{table}
-\resizebox{0.85\textwidth}{!}{%
-\begin{tabular*}{\textwidth}{c @{\extracolsep{\fill}} ccccccc}
-         & Titre     & Intention & Contexte  & Problème  & Solution  & Conséquence \\
-Gomaa    & Partielle & Partielle & \ding{51} & \ding{51} &\ding{51}  & \ding{51}   \\
-\end{tabular*}}
-\end{table}
-\end{frame}
-%
-\begin{frame}{Comparaison des caractéristiques des décisions de reconfiguration
-pour les SdSs}
-\begin{table}[]
-\centering
-\resizebox{0.85\textwidth}{!}{%
-\begin{tabular*}{\textwidth}{c @{\extracolsep{\fill}} ccccccc}
-         & Titre     & Intention & Contexte  & Problème  & Solution  & Conséquence \\
-Allen    & \ding{53} & \ding{53} & \ding{51} & \ding{51} & \ding{51} & \ding{53}   \\
-Oliveira & Partielle & \ding{53} & \ding{51} & Partielle & Partielle & \ding{53}   \\
-Gomaa    & Partielle & Partielle & \ding{51} & \ding{51} &\ding{51}  & \ding{51}   \\
-\end{tabular*}
-}
-\end{table}
-\end{frame}
-
 
 \begin{frame}{Patron de reconfiguration co-évolution : délimitation du problème}
 \begin{figure}
@@ -133,10 +70,8 @@ composant.
 \includegraphics[width=12cm]{imgs/slide_solution_coevolution.pdf}
 \end{frame}
 
-\begin{frame}{Amélioration de la réutilisation}
-\end{frame}
 
-\begin{frame}{Résumé}
+\begin{frame}{Patrons de reconfiguration supplémentaires}
 \begin{itemize}
 \setlength\itemsep{0.7cm}
 \item \underline{\textbf{Quiescence}} : rendre passif,
