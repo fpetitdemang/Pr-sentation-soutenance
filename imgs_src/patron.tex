@@ -1,0 +1,47 @@
+\def\bonhomme#1{
+\node[draw,circle,minimum width=3mm] (tete#1) {};
+\coordinate (cou#1) at ([yshift=-2mm]tete#1.south);
+\coordinate (entrejambes#1) at ([yshift=-2mm]cou#1);
+\coordinate (main-gauche#1) at ([xshift=-3mm]cou#1);
+\coordinate (main-droite#1) at ([xshift=3mm]cou#1);
+\coordinate (pied-gauche#1) at ([xshift=-3mm,yshift=-3mm]entrejambes#1);
+\coordinate (pied-droit#1) at ([xshift=3mm,yshift=-3mm]entrejambes#1);
+\draw (tete#1.south) -- (entrejambes#1);
+\draw (main-gauche#1) -- (main-droite#1);
+\draw (pied-gauche#1) -- (entrejambes#1) -- (pied-droit#1);
+}
+\begin{tikzpicture}
+    \begin{scope}[line width=2pt,every node/.style={line width=2pt}]
+        \bonhomme{1}
+        \begin{scope}[xshift=4cm]
+            \bonhomme{2}
+            \begin{scope}[xshift=1.5cm,yshift=3.5cm]
+                \bonhomme{3}
+            \end{scope}
+        \end{scope}
+    \end{scope}
+    \foreach \i in {1,2,3} {
+        \node[fit=(tete\i)(cou\i)(entrejambes\i)(main-gauche\i)(main-droite\i)(pied-gauche\i)(pied-droit\i),inner sep=0pt] (b\i) {};
+    }
+    \begin{scope}[every node/.style={line width=2pt,draw=black,rectangle,minimum height=12mm,minimum width=8.4mm,outer sep=2mm}]
+        \foreach \i in {1,2} {
+            \node (r\i) at ([xshift=1.5cm,yshift=1cm]tete\i.center) {};
+        }
+        \node[cylinder,shape border rotate=90] (bd) at ([xshift=4cm]r2.center) {};
+    \end{scope}
+    \begin{scope}[line width=2pt,->]
+        \draw (b1) -- (r1) node[pos=.5,below right,inner sep=0pt] {*};
+        \draw (b2) -- (r2) node[pos=.5,below right,magnifying glass,draw,outer sep=2mm] {};
+        \draw (b3) -- (r2) node[pos=.5,right,outer sep=1mm,magnifying glass,draw] {};
+        \draw (r1) -- (r2);
+        \draw (r2) -- (bd);
+        \draw (bd.north) |- ([yshift=1mm]tete3.north) coordinate[name=f] -| (r1.north);
+    \end{scope}
+    \begin{scope}[every node/.style={draw=black,circle,font=\footnotesize,outer sep=1mm,inner sep=1pt}]
+        \node[above left] at (r1.north west) {1};
+        \node[below] (t2) at (r2.south) {2};
+        \node (t3) at (bd.south |- t2) {3};
+    \end{scope}
+    \node[below] at (t2.south) {communication};
+    \node[below] at (t3.south) {capitalisation};
+\end{tikzpicture}

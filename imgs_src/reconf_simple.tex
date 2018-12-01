@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+    \begin{scope}[line width=2pt]
+        \begin{scope}[every node/.style={draw=black,rectangle,minimum height=5mm,minimum width=5mm,line width=2pt},node distance=5mm]
+            \foreach \i/\xs/\ys in {0/0cm/0cm,1/3cm/1cm,2/6cm/0cm} {
+                \begin{scope}[xshift=\xs,yshift=\ys]
+                    \node (a\i) {};
+                    \node[below right=of a\i] (b\i) {};
+                \end{scope}
+            }
+            \node[draw=green!70!black,right=of a1] (c1) {};
+            \node[right=of a2] (c2) {};
+        \end{scope}
+        \begin{scope}[draw=black]
+            \draw (a0) -- (b0);
+            \draw (a2) |- (b2);
+            \draw (a2) -- (c2);
+        \end{scope}
+        \begin{scope}[draw=green!70!black]
+            \draw (a1) |- (b1);
+            \draw (a1) -- (c1);
+        \end{scope}
+        \draw[red!70!black] (a1) -- (b1);
+    \begin{scope}[every node/.style={line width=2pt,draw,rectangle}]
+        \node[fit=(a0)(b0)] (C0) {};
+        \node[fit=(a1)(b1)(c1)] (C1) {};
+        \node[fit=(a2)(b2)(c2)] (C2) {};
+    \end{scope}
+        \begin{scope}[->]
+            \draw (C0) to[out=10,in=180] (C1);
+            \draw (C1) to[out=0,in=170] (C2);
+        \end{scope}
+    \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,62 @@
+\usepackage{tikz}
+\usetikzlibrary{shapes.symbols,decorations,decorations.pathmorphing,decorations.markings,decorations.pathreplacing,calc,external}
+
+\newcommand{\numero}[1]{\begin{tikzpicture}[baseline=(titi.base),num/.style={draw,circle,inner sep=1pt,thin,font=\scriptsize}]
+     \node[num] (titi) {#1};    
+  \end{tikzpicture}}
+
+\makeatletter
+\pgfdeclaredecoration{gluon}{initial}
+{
+  \state{initial}[
+    width=+0pt,
+    next state=coil,
+    persistent precomputation={
+      \pgfmathsetmacro\matchinglength{
+        (ceil(\pgfdecoratedinputsegmentlength / \pgfdecorationsegmentlength) - \pgfdecoratedinputsegmentlength / \pgfdecorationsegmentlength) > 0.5
+        ? (\pgfdecoratedinputsegmentlength - 2 * \pgfdecorationsegmentaspect * \pgfdecorationsegmentamplitude) / (floor(\pgfdecoratedinputsegmentlength / \pgfdecorationsegmentlength) + 0.499)
+        : (\pgfdecoratedinputsegmentlength - 2 * \pgfdecorationsegmentaspect * \pgfdecorationsegmentamplitude) / (ceil(\pgfdecoratedinputsegmentlength / \pgfdecorationsegmentlength) + 0.499)
+      }
+      \setlength{\pgfdecorationsegmentlength}{\matchinglength pt}
+    },
+  ]{}
+  \state{coil}[
+    switch if less than=%
+      1.5\pgfdecorationsegmentlength%
+      +\pgfdecorationsegmentaspect\pgfdecorationsegmentamplitude%
+      +\pgfdecorationsegmentaspect\pgfdecorationsegmentamplitude to last,
+    width=+\pgfdecorationsegmentlength,
+  ]
+  {
+    \pgfpathcurveto
+    {\pgfpoint@oncoil{0    }{ 0.555}{ 1}}
+    {\pgfpoint@oncoil{0.445}{ 1    }{ 2}}
+    {\pgfpoint@oncoil{1    }{ 1    }{ 3}}
+    \pgfpathcurveto
+    {\pgfpoint@oncoil{1.555}{ 1    }{ 4}}
+    {\pgfpoint@oncoil{2    }{ 0.555}{ 5}}
+    {\pgfpoint@oncoil{2    }{ 0    }{ 6}}
+    \pgfpathcurveto
+    {\pgfpoint@oncoil{2    }{-0.555}{ 7}}
+    {\pgfpoint@oncoil{1.555}{-1    }{ 8}}
+    {\pgfpoint@oncoil{1    }{-1    }{ 9}}
+    \pgfpathcurveto
+    {\pgfpoint@oncoil{0.445}{-1    }{10}}
+    {\pgfpoint@oncoil{0    }{-0.555}{11}}
+    {\pgfpoint@oncoil{0    }{ 0    }{12}}
+  }
+  \state{last}[next state=final]
+  {
+    \pgfpathcurveto
+    {\pgfpoint@oncoil{0    }{ 0.555}{1}}
+    {\pgfpoint@oncoil{0.445}{ 1    }{2}}
+    {\pgfpoint@oncoil{1    }{ 1    }{3}}
+    \pgfpathcurveto
+    {\pgfpoint@oncoil{1.555}{ 1    }{4}}
+    {\pgfpoint@oncoil{2    }{ 0.555}{5}}
+    {\pgfpointdecoratedpathlast}
+  }
+  \state{final}{
+  }
+}
+\makeatother
