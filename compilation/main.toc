@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Patron de reconfiguration}{8}{0}{1}
+\beamer@sectionintoc {2}{Processus de reconfiguration}{15}{0}{2}
+\beamer@sectionintoc {3}{Exp\IeC {\'e}rimentation}{19}{0}{3}
+\beamer@sectionintoc {4}{Conclusions et perspectives}{22}{0}{4}
