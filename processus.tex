@@ -1,16 +1,25 @@
 \section{Processus de reconfiguration} 
 
-\begin{frame}{Processus de conception de reconfiguration existant}
+\begin{frame}{Processus de conception de reconfiguration existants}
+\begin{onlyenv}<1->
 \begin{figure}
 \begin{subfigure}[b]{0.45\textwidth} % "0.45" donne ici la largeur
-\includegraphics[width=5cm, height=3.8cm]{imgs/boyer_protocole}
-\caption{Automatique, \emph{Boyer et al, 2017}}\label{fig:orchid}
+\includegraphics[width= 5cm, height=3cm ]{imgs/boyer}
+\caption{Automatique, [\emph{Boyer et al, 2017}]}\label{fig:orchid}
 \end{subfigure}
 \begin{subfigure}[b]{0.45\textwidth} % "0.45" donne ici la largeur
 \includegraphics[width=5cm]{imgs/buisson_approche}\\
-\caption{Manuelle \emph{Buisson et al, 2017}}\label{fig:orchid}
+\caption{Manuelle, [\emph{Buisson et al, 2017}]}\label{fig:orchid}
 \end{subfigure}
 \end{figure}
+\end{onlyenv}
+\begin{onlyenv}<2>
+\begin{block}{}
+\begin{itemize}
+    \item   L'architecte doit continuellement adapter ses hypothèses sur le contexte de reconfiguration.
+\end{itemize}
+\end{block}
+\end{onlyenv}
 \end{frame}
 
 \begin{frame}{Proposition d'un processus de reconfiguration}
@@ -23,7 +32,7 @@
 \end{column}
 \begin{column}{0.4\textwidth}
 \begin{block}{}
-\underline{\textbf{Phase de préparation}} : application de modification transitoire
+\underline{\textbf{Phase de préparation}} : application des actions qui valident les critères de reconfiguration
 \end{block}
 \begin{block}{}
 \underline{\textbf{Phase de modification}} : application actions souhaitées de reconfiguration
@@ -38,12 +47,12 @@ liées à la reconfiguration
 
 \begin{frame}{Utilisation des patrons de reconfiguration}
 \begin{enumerate}
-\item \underline{\textbf{Analyse}} Le processus s'appuie sur les patrons de reconfiguration. Dans un
+\setlength\itemsep{0.7cm}
+\item \underline{\textbf{Analyse}} Dans un
 premier temps, l'architecte analyse les modifications à apporter.
-\item \underline{\textbf{Décision}}  il utilise le catalogue de patron pour identifier les problèmes qu'il
-peut rencontrer et comment les résoudre. ou il définit un nouveau
-patron.
-\item \underline{\textbf{Récursion}} Dans le cas, ou le solution n'est pas directement applicable alors il
-peut décider d'une nouvelle itération
+\item \underline{\textbf{Décision}}  Il utilise le catalogue de patrons pour identifier les problèmes qu'il
+peut rencontrer et comment les résoudre.
+\item \underline{\textbf{Récursion}} Dans le cas où la solution n'est pas directement applicable alors il
+peut décider d'une nouvelle itération.
 \end{enumerate}
 \end{frame}
